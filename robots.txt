@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://TristanSaidi.github.io/al-folio/sitemap.xml
+Sitemap: https://TristanSaidi.github.io/sitemap.xml
