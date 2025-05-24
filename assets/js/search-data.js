@@ -41,7 +41,7 @@ ninja.data = [{
         
           title: "Introduction to Differential Geometry",
         
-        description: "This is a really brief set of notes from a differential geometry course. I decided to create this both for practice, and to share some foundational math behind the concept of curvature. I hope you enjoy!",
+        description: "This is a really brief set of notes from a differential geometry course I really enjoyed. I decided to create this both for practice, and to share some fundamental math behind the concept of curvature. I hope you enjoy!",
         section: "Posts",
         handler: () => {
           
