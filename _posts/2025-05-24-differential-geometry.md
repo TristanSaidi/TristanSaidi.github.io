@@ -23,11 +23,11 @@ and call it the unit tangent vector to $\alpha$ at time $t$. Intuitively, we def
 k(t) := \|\alpha^{\prime\prime}(t)\|_2 = \|T'(t)\|_2.
 \end{align}
 Put simply, the curvature tells us how quickly the unit tangent vector of our curve changes! A little more digging will give allow us to draw a clear picture of all of these quantities. Notice that, since $\|T(t)\|_2 = 1$, we have
-\begin{align*}
+\begin{aligned}
 \frac{d}{dt} \langle T(t), T(t) \rangle &= 0 \\
 \langle T'(t), T(t) \rangle + \langle T(t), T'(t) \rangle &= 0 \\
 \langle T'(t), T(t) \rangle &= 0.
-\end{align*}
+\end{aligned}
 This tells us that $T'(t)$ is necessarily orthogonal to the unit tangent, $T(t)$. We can use this insight to further define the unit normal vector,
 \begin{align}
 n(t) := \frac{T'(t)}{\|T'(t)\|_2} = \frac{T'(t)}{k(t)}.
@@ -48,11 +48,11 @@ dX_p(v) = J_X v.
 The function $dX_p(v)$ depends only on $p$ and $v$, not the choice of $\alpha(t) = (u(t),v(t))$.
 :::::
 This becomes clear when we expand the definition of the differential using the chain rule,
-\begin{align*}
+\begin{aligned}
 dX_p(v) &= \frac{d}{dt}(X \circ \alpha)\Big|_{t = 0} \\
 &= X_u u'(t) + X_v v'(t) \Big|_{t = 0} \\
 &= X_u u'(0) + X_v v'(0)
-\end{align*}
+\end{aligned}
 where $v = (u'(0),v'(0))$ by definition and $X_u = \frac{\partial X}{\partial u}$, $X_v = \frac{\partial X}{\partial v}$.
 
 Now we can finally discuss surfaces in $\mathbb{R}^3$, specifically regular surfaces.
@@ -71,9 +71,9 @@ We'll now define the notion of a tangent space to a point, a critical geometric 
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
 The tangent space to $S$ at $p$ is defined as
-\begin{align*}
+\begin{aligned}
 T_pS = \{v \in \mathbb{R}^3 \, | \, v \text{ tangential to } S \text{ at } p\}.
-\end{align*}
+\end{aligned}
 :::::
 Figure \textcolor{red}{HERE!} shows an example of the tangent space to a surface. This vector space $T_pS$ actually arises directly from the charts used to construct $S$. This is illustrated in the following lemma:
 
@@ -109,18 +109,18 @@ for $(v,w) \in U \times U$. It is often interpreted as the restriction of the Eu
 
 A visualization of the quantities used in the definition can be seen in \textcolor{red}{HERE!} For me, it is intuitive to think about the matrix representation of $\mathrm{I}_p$. Expanding the definition we see,
 
-\begin{align*}
+\begin{aligned}
 \mathrm{I}_p(v,w) &= \langle dX_p(v), dX_p(w) \rangle \\
 &= v^T J_X^T J_X w \\
 &= v^T \begin{bmatrix}
 E & F \\[6pt]
 F & G
 \end{bmatrix} w
-\end{align*}
+\end{aligned}
 
 where 
 
-\begin{align*}
+\begin{aligned}
 \begin{bmatrix}
 E & F \\[6pt]
 F & G
@@ -128,29 +128,29 @@ F & G
 \langle X_u, X_u \rangle & \langle X_u, X_v \rangle \\[6pt]
 \langle X_u, X_v \rangle & \langle X_v, X_v \rangle
 \end{bmatrix}.
-\end{align*}
+\end{aligned}
 
 By looking at the first fundamental form this way, we see that it tells us how much the local chart $X$ deforms the patch $U \subset \mathbb{R}^2$ along the coordinate axes $u$ and $v$ to get the patch $X(U) \subset S$! We can make this idea concrete by computing path lengths on $S$, where we will see a clear dependence on the first fundamental form.
 
 Let $\beta:[a,b] \rightarrow U \subset \mathbb{R}^2$ and let $\alpha = X \circ \beta$, where $X$ is a local chart for $S$. Lets compute the length of the path of $\beta$ and $\alpha$:
-\begin{align*}
+\begin{aligned}
 L(\beta) &= \int_a^b \|\beta'(t)\|_2 \, dt \\
 L(\alpha) &= \int_a^b \|\alpha'(t)\|_2 \, dt.
-\end{align*}
+\end{aligned}
 We can apply the chain rule to get $\alpha'(t)$ in terms of $\beta$,
-\begin{align*}
+\begin{aligned}
 \alpha'(t) &= \frac{d}{dt}(X \circ \beta)(t) \\
 &= X_u u'(t) + X_v v'(t).
-\end{align*}
+\end{aligned}
 Plugging back into the path length equation, we get
-\begin{align*}
+\begin{aligned}
 L(\alpha) &= \int_a^b \Big\langle X_u u'(t) + X_v v'(t), \, X_u u'(t) + X_v v'(t) \Big\rangle^{1/2} \, dt \\
 L(\alpha) &= \int_a^b \Bigl(Eu'(t)^2 + 2Fu'(t)v'(t) + Gv'(t)^2 \Bigr)^{1/2} \, dt.
-\end{align*}
+\end{aligned}
 Rewriting $L(\beta)$ as follows,
-\begin{align*}
+\begin{aligned}
 L(\beta) &= \int_a^b \Bigl(u'(t)^2 + v'(t)^2 \Bigr)^{1/2} \, dt
-\end{align*}
+\end{aligned}
 clearly illustrates the fact that $\mathrm{I}_p$ determines the distortion of path lengths induced by the chart $X$. Now, we will move on to define and analyze the second fundamental form.
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
@@ -161,12 +161,12 @@ Suppose we have a surface $S$ with a local chart $X: U \subset \mathbb{R}^2 \rig
 for $(v,w) \in U \times U$.
 :::::
 Again, we can look at the matrix representation of $\mathrm{I\!I}_p$ to get a better idea of what is going on,
-\begin{align*}
+\begin{aligned}
 \mathrm{I\!I}_p(v,w) &= \langle -dN_p(v), w \rangle \\
 &= v^T(-J_N)w
-\end{align*}
+\end{aligned}
 where $J_N$ is the jacobian of the Gauss map. Some calculation reveals that 
-\begin{align*}
+\begin{aligned}
 J_N &= \begin{bmatrix}
 E & F \\[6pt]
 F & G
@@ -174,9 +174,9 @@ F & G
 e & f \\[6pt]
 f & g
 \end{bmatrix}
-\end{align*}
+\end{aligned}
 where,
-\begin{align*}
+\begin{aligned}
 \begin{bmatrix}
 e & f \\[6pt]
 f & g
@@ -184,7 +184,7 @@ f & g
 -\langle N_u, X_u  \rangle & -\langle N_v, X_u  \rangle \\[6pt]
 -\langle N_u, X_v  \rangle & -\langle N_v, X_v  \rangle
 \end{bmatrix}.
-\end{align*}
+\end{aligned}
 
 Again, this sheds some light on what $\mathrm{I\!I}_p$ represents: it tells us how the normal vector changes as we move along the surface (specifically with respect to changes in the parameters $u$ and $v$ in the domain of the local chart $X$).
 
@@ -197,21 +197,21 @@ For a surface $S$ suppose we have a unitary normal vector field $N: S \rightarro
 The term on the right, $\langle \alpha^{\prime\prime}(0), N(p) \rangle$, represents the projection of the acceleration of $\alpha$ onto the surface normal. This quantity is often referred to as the normal curvature, as it represents the amount of curvature of $\alpha$ that is normal to the surface $S$ at $p$.
 
 Proof of Euler's Theorem:
-\begin{align*}
+\begin{aligned}
 \mathrm{I\!I}_p(v,v) &= \mathrm{I\!I}_p (\alpha'(0), \alpha'(0)) \\
 &= \langle dN_p(\alpha'(0)), \alpha'(0) \rangle \\
 &= \Bigl\langle \underbrace{\frac{d}{dt} N(\alpha(t)) \Big|_{t=0}}_{N'(p)}, \, \alpha'(0) \Bigr\rangle \\
 &= \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle
-\end{align*}
+\end{aligned}
 
 where the last step follows from the fact that $N(\alpha(t)) \perp \alpha'(t)$.
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
 The principal curvatures of a surface $S$ at $p$ are defined to be the maximum and minimum normal curvatures that an arc-length parameterized curve $\alpha$ can have, where $\alpha(0) = p$. Formally,
-\begin{align*}
+\begin{aligned}
 k_1(p) &= \min_{\alpha(0) = p} k_n(0) \\
 k_2(p) &= \max_{\alpha(0) = p} k_n(0).
-\end{align*}
+\end{aligned}
 :::::
 From the principal curvatures, the definitions of Gaussian and mean curvature arise:
 
@@ -229,32 +229,32 @@ H(p) = \frac{k_1(p) + k_2(p)}{2}.
 For the rest of the blog we'll focus on Gaussian curvature. While mean curvature offers a tool for the study of the extrinsic geometry of a surface, it is out of the scope of this blog post.
 
 To give some grounding for Gaussian curvature: the plane has $K \equiv 0$, the standard 2-sphere has $K \equiv +1$, while the standard pseudosphere has $K \equiv -1$. But a key question arises: how were those quantities computed? It's not clear how to solve the minimization problem required to compute the principal curvatures. But if we study $\mathrm{I\!I}_p$ a little more, we'll find that it has the ingredients to allow us to compute $k_1$ and $k_2$ directly from a local chart $X$! Recall
-\begin{align*}
+\begin{aligned}
 k_1(p) &= \min_{\alpha(0) = p} k_n(0) \\
 &= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle.
-\end{align*}
+\end{aligned}
 
 We can directly apply Euler's Theorem to replace the right hand side with the second fundamental form applied to the initial velocity of $\alpha$,
-\begin{align*}
+\begin{aligned}
 k_1(p) &= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle \\
 &= \min_{\alpha(0) = p} \mathrm{I\!I}_p(\alpha'(0), \alpha'(0)).
-\end{align*}
+\end{aligned}
 Because this last line only depends on the zero and first-order behavior of $\alpha$, we can replace it with the following,
-\begin{align*}
+\begin{aligned}
 k_1(p) &= \min_{\|v\|_2 = 1} \mathrm{I\!I}_p(v, v) \\
 &= \min_{\|v\|_2 = 1} v^T(-J_N)v.
-\end{align*}
+\end{aligned}
 The interpretations of the eigenvalues of a quadratic form as the minimal and maximal values of the quadratic form restricted to the unit sphere tells us that the eigenvalues $\lambda_1$, $\lambda_2$ of $-J_N$ are the principal curvatures:
-\begin{align*}
+\begin{aligned}
 k_1(p) &= \lambda_1 \\
 k_2(p) &= \lambda_2.
-\end{align*}
+\end{aligned}
 
 This gives rise to new equations for the Gaussian and mean curvatures:
-\begin{align*}
+\begin{aligned}
 K(p) &= \det(-J_N) = \frac{eg - f^2}{EG - F^2} \\
 H(p) &= \frac{1}{2} \mathrm{Tr}(-J_N) = \frac{1}{2}\frac{eG + gE - 2fF}{EG - F^2}.
-\end{align*}
+\end{aligned}
 
 # Section 3: Gauss' Theorema Egregium
 
@@ -277,10 +277,10 @@ Now we are in a position where we can state Gauss' Theorema Egregium.
 The Gaussian curvature of a surface $S$ is invariant under isometries. That is, if $f: S \rightarrow S'$ is an isometry, then $K(p) = K(f(p))$ $\forall p \in S$.
 :::::
 Proof sketch. One can show that the Gaussian curvature $K$ depends only on the zero and first order behavior of the first fundamental form $E$, $F$ and $G$. Thus, $K$ can be written as
-\begin{align*}
+\begin{aligned}
 K &= \frac{eg - f^2}{EG - F^2} \\
 &= \frac{\phi(E, G, F, E_u, E_v, G_u, G_v, F_u, F_v)}{EG - F^2}
-\end{align*}
+\end{aligned}
 where $\phi$ is some messy function of the first fundamental form and its partial derivatives w.r.t. $u$ and $v$. Since $K$ can be written as a function of only the first fundamental form, and by the previous theorem isometries preserve the first fundamental form, we can conclude that the Gaussian curvature $K$ must be preserved under isometries!
 
 ## Implications
