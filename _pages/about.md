@@ -22,9 +22,9 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: true
+  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 1 # leave blank to include all the blog posts
 ---
 
 I am an incoming PhD student in the Department of Statistics and Data Science at Carnegie Mellon University. Before that, I completed my first year of graduate studies at Columbia University in the department of Computer Science, where I was very fortunate to work with Professor [Andrew J. Blumberg](https://cancerdynamics.columbia.edu/andrew-j-blumberg-phd) and Professor [Matei Ciocarlie](https://www.me.columbia.edu/faculty/matei-ciocarlie). During this time, I worked on theoretically grounded methods that use discrete graph curvature to improve geometric data analysis. Before that, I worked primarily on robot learning for dexterous manipulation and spent some time working on reinforcement learning for snake locomotion as well.
