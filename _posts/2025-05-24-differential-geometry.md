@@ -10,18 +10,18 @@ related_posts: false
 # Section 1: Geometry of curves in $\mathbb{R}^3$
 
 Consider $\alpha(t): [a,b] \rightarrow \mathbb{R}^3$ to be a differentiable, time-parameterized curve through $\mathbb{R}^3$. The length of such a curve is defined as 
-\begin{align}
+\begin{aligned}
 L(\alpha) := \int_a^b \|\alpha'(t)\|_2 \, dt.
-\end{align}
+\end{aligned}
 
 We say $\alpha$ is parameterized by arc-length (p.a.l.) if $\|\alpha'(t)\|_2 = 1$ for all $t \in [a,b]$. Now we'll introduce some definitions to build up to a notion of curvature. Supposing $\alpha: [a,b] \rightarrow \mathbb{R}^3$ p.a.l., we define 
-\begin{align}
+\begin{aligned}
 T(t) := \alpha'(t)
-\end{align}
+\end{aligned}
 and call it the unit tangent vector to $\alpha$ at time $t$. Intuitively, we define the curvature of the curve $\alpha$, denoted $k(t)$ to be the magnitude of the time derivative of $T(t)$,
-\begin{align}
+\begin{aligned}
 k(t) := \|\alpha^{\prime\prime}(t)\|_2 = \|T'(t)\|_2.
-\end{align}
+\end{aligned}
 Put simply, the curvature tells us how quickly the unit tangent vector of our curve changes! A little more digging will give allow us to draw a clear picture of all of these quantities. Notice that, since $\|T(t)\|_2 = 1$, we have
 \begin{aligned}
 \frac{d}{dt} \langle T(t), T(t) \rangle &= 0 \\
@@ -29,20 +29,20 @@ Put simply, the curvature tells us how quickly the unit tangent vector of our cu
 \langle T'(t), T(t) \rangle &= 0.
 \end{aligned}
 This tells us that $T'(t)$ is necessarily orthogonal to the unit tangent, $T(t)$. We can use this insight to further define the unit normal vector,
-\begin{align}
+\begin{aligned}
 n(t) := \frac{T'(t)}{\|T'(t)\|_2} = \frac{T'(t)}{k(t)}.
-\end{align}
+\end{aligned}
 This gives us a solid basis of geometric descriptors of a given differentiable curve $\alpha$. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$ is shown \textcolor{red}{HERE!}
 
 # Section 2: Geometry of surfaces in $\mathbb{R}^3$
 Now we can graduate to analyzing the geometry of surfaces in $\mathbb{R}^3$. Before we do so, though, we will define the differential of a map $X: \mathbb{R}^2 \rightarrow \mathbb{R}^3$. The differential of $X$ at $p$, denoted $dX_p: \mathbb{R}^2 \rightarrow \mathbb{R}^3$, is a linear map that takes tangent vectors to curves passing through $p$ to the associated tangent vector of the curve induced by $X$, show in Figure \textcolor{red}{HERE}. Formally, let $\alpha:(-\epsilon, \epsilon) \rightarrow \mathbb{R}^2$ be a curve such that $\alpha(0) = p$ and $\alpha'(0) = v$. Then,
-\begin{align}
+\begin{aligned}
 dX_p(v) = \frac{d}{dt}(X \circ \alpha)\Big|_{t = 0}.
-\end{align}
+\end{aligned}
 While this definition may seem confusing, if we take a look at the matrix representation of this linear map, we see that it simply boils down to the jacobian of $X$ applied to the vector $v$,
-\begin{align}
+\begin{aligned}
 dX_p(v) = J_X v.
-\end{align}
+\end{aligned}
 
 ::::: {.theorem-like name="Remark" .unnumbered}
 The function $dX_p(v)$ depends only on $p$ and $v$, not the choice of $\alpha(t) = (u(t),v(t))$.
@@ -101,9 +101,9 @@ The first fundamental form (denoted $\mathrm{I}_p$) and second fundamental form 
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
 Suppose we have a surface $S$ with a local chart $X: U \subset \mathbb{R}^2 \rightarrow S$, and a point $p \in X(U)$. The first fundamental form of $S$ at $p$, denoted $\mathrm{I}_p: T_pS \times T_pS \rightarrow \mathbb{R}$, is the map 
-\begin{align}
+\begin{aligned}
 \mathrm{I}_p(v,w) = \langle dX_p(v), dX_p(w) \rangle
-\end{align}
+\end{aligned}
 for $(v,w) \in U \times U$. It is often interpreted as the restriction of the Euclidean inner product to $T_pS$.
 :::::
 
@@ -155,9 +155,9 @@ clearly illustrates the fact that $\mathrm{I}_p$ determines the distortion of pa
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
 Suppose we have a surface $S$ with a local chart $X: U \subset \mathbb{R}^2 \rightarrow S$, and a point $p \in X(U)$. The second fundamental form of $S$ at $p$, denoted $\mathrm{I\!I}_p: T_pS \times T_pS \rightarrow \mathbb{R}$, is the map 
-\begin{align}
+\begin{aligned}
 \mathrm{I\!I}_p(v,w) = \langle -dN_p(v), w \rangle
-\end{align}
+\end{aligned}
 for $(v,w) \in U \times U$.
 :::::
 Again, we can look at the matrix representation of $\mathrm{I\!I}_p$ to get a better idea of what is going on,
@@ -190,9 +190,9 @@ Again, this sheds some light on what $\mathrm{I\!I}_p$ represents: it tells us h
 
 ::::: {.theorem-like name="Theorem (Euler)" .unnumbered}  
 For a surface $S$ suppose we have a unitary normal vector field $N: S \rightarrow \mathbb{R}^3$. Also suppose that we have $\alpha: (-\epsilon, \epsilon) \rightarrow S$ p.a.l., such that $\alpha(0) = p$, $\alpha'(0) = v$. Then
-\begin{align}
+\begin{aligned}
 \mathrm{I\!I}_p(v,v) = \langle \alpha^{\prime\prime}(0), N(p) \rangle.
-\end{align}
+\end{aligned}
 :::::
 The term on the right, $\langle \alpha^{\prime\prime}(0), N(p) \rangle$, represents the projection of the acceleration of $\alpha$ onto the surface normal. This quantity is often referred to as the normal curvature, as it represents the amount of curvature of $\alpha$ that is normal to the surface $S$ at $p$.
 
@@ -217,13 +217,13 @@ From the principal curvatures, the definitions of Gaussian and mean curvature ar
 
 ::::: {.theorem-like name="Definition" .unnumbered}  
 The Gaussian curvature of a surface $S$ at $p$ is the product of the principal curvatures,
-\begin{align}
+\begin{aligned}
 K(p) = k_1(p)k_2(p)
-\end{align}
+\end{aligned}
 while the mean curvature is the mean of the principal curvatures,
-\begin{align}
+\begin{aligned}
 H(p) = \frac{k_1(p) + k_2(p)}{2}.
-\end{align}
+\end{aligned}
 :::::
 
 For the rest of the blog we'll focus on Gaussian curvature. While mean curvature offers a tool for the study of the extrinsic geometry of a surface, it is out of the scope of this blog post.
