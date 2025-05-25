@@ -20,7 +20,7 @@ T(t) := \alpha'(t)
 \end{align}
 and call it the unit tangent vector to $\alpha$ at time $t$. Intuitively, we define the curvature of the curve $\alpha$, denoted $k(t)$ to be the magnitude of the time derivative of $T(t)$,
 \begin{align}
-k(t) := \|\alpha''(t)\|_2 = \|T'(t)\|_2.
+k(t) := \|\alpha^{\prime\prime}(t)\|_2 = \|T'(t)\|_2.
 \end{align}
 Put simply, the curvature tells us how quickly the unit tangent vector of our curve changes! A little more digging will give allow us to draw a clear picture of all of these quantities. Notice that, since $\|T(t)\|_2 = 1$, we have
 \begin{align*}
@@ -191,17 +191,17 @@ Again, this sheds some light on what $\mathrm{I\!I}_p$ represents: it tells us h
 ::::: {.theorem-like name="Theorem (Euler)" .unnumbered}  
 For a surface $S$ suppose we have a unitary normal vector field $N: S \rightarrow \mathbb{R}^3$. Also suppose that we have $\alpha: (-\epsilon, \epsilon) \rightarrow S$ p.a.l., such that $\alpha(0) = p$, $\alpha'(0) = v$. Then
 \begin{align}
-\mathrm{I\!I}_p(v,v) = \langle \alpha''(0), N(p) \rangle.
+\mathrm{I\!I}_p(v,v) = \langle \alpha^{\prime\prime}(0), N(p) \rangle.
 \end{align}
 :::::
-The term on the right, $\langle \alpha''(0), N(p) \rangle$, represents the projection of the acceleration of $\alpha$ onto the surface normal. This quantity is often referred to as the normal curvature, as it represents the amount of curvature of $\alpha$ that is normal to the surface $S$ at $p$.
+The term on the right, $\langle \alpha^{\prime\prime}(0), N(p) \rangle$, represents the projection of the acceleration of $\alpha$ onto the surface normal. This quantity is often referred to as the normal curvature, as it represents the amount of curvature of $\alpha$ that is normal to the surface $S$ at $p$.
 
 Proof of Euler's Theorem:
 \begin{align*}
 \mathrm{I\!I}_p(v,v) &= \mathrm{I\!I}_p (\alpha'(0), \alpha'(0)) \\
 &= \langle dN_p(\alpha'(0)), \alpha'(0) \rangle \\
 &= \Bigl\langle \underbrace{\frac{d}{dt} N(\alpha(t)) \Big|_{t=0}}_{N'(p)}, \, \alpha'(0) \Bigr\rangle \\
-&= \Bigl\langle N(p), \alpha''(0) \Bigr\rangle
+&= \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle
 \end{align*}
 
 where the last step follows from the fact that $N(\alpha(t)) \perp \alpha'(t)$.
@@ -231,12 +231,12 @@ For the rest of the blog we'll focus on Gaussian curvature. While mean curvature
 To give some grounding for Gaussian curvature: the plane has $K \equiv 0$, the standard 2-sphere has $K \equiv +1$, while the standard pseudosphere has $K \equiv -1$. But a key question arises: how were those quantities computed? It's not clear how to solve the minimization problem required to compute the principal curvatures. But if we study $\mathrm{I\!I}_p$ a little more, we'll find that it has the ingredients to allow us to compute $k_1$ and $k_2$ directly from a local chart $X$! Recall
 \begin{align*}
 k_1(p) &= \min_{\alpha(0) = p} k_n(0) \\
-&= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha''(0) \Bigr\rangle.
+&= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle.
 \end{align*}
 
 We can directly apply Euler's Theorem to replace the right hand side with the second fundamental form applied to the initial velocity of $\alpha$,
 \begin{align*}
-k_1(p) &= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha''(0) \Bigr\rangle \\
+k_1(p) &= \min_{\alpha(0) = p} \Bigl\langle N(p), \alpha^{\prime\prime}(0) \Bigr\rangle \\
 &= \min_{\alpha(0) = p} \mathrm{I\!I}_p(\alpha'(0), \alpha'(0)).
 \end{align*}
 Because this last line only depends on the zero and first-order behavior of $\alpha$, we can replace it with the following,
