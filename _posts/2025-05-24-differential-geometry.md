@@ -125,7 +125,7 @@ Unitary normal vector fields give rise to the notion of orientability. For examp
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0 text-center">
-        {% include figure.liquid loading="eager" path="assets/img/mc_escher.jpg" class="img-fluid rounded z-depth-1 w-75" %}
+        {% include figure.liquid loading="eager" path="assets/img/mc_escher.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
