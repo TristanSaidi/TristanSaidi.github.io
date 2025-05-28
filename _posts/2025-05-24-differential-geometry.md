@@ -7,6 +7,9 @@ tags:
 categories: 
 related_posts: false
 ---
+
+Before we start, I want to mention that this blog is largely derived from the course materials from Claudio Arezzo's Differential Geometry course hosted by the [International Centre for Theoretical Physics](https://www.ictp.it/) (ICTP), and it also pulls significantly from Manfredo do Carmo's [Differential Geometry of Curves and Surfaces](https://www.amazon.com/Differential-Geometry-Curves-Surfaces-Mathematics/dp/0486806995). Both of these resources are incredible for learning about Differential Geometry, and I really can't recommend taking a look at them enough.
+
 # Section 1: Geometry of curves in $\mathbb{R}^3$
 
 Consider $\alpha(t): [a,b] \rightarrow \mathbb{R}^3$ to be a differentiable, time-parameterized curve through $\mathbb{R}^3$. The length of such a curve is defined as 
@@ -364,8 +367,3 @@ Gauss' Theorema Egregium is a major result of differential geometry, as it sheds
 This arises from the fact that Gaussian curvature measures the intrinsic distortion of a surface from a Euclidean space. Rolling the plane up into a cylinder introduces extrinsic curvature, but does not stretch or warp the surface in any way. One can see this by playing around with a piece of printer paper. Anything you do to bend or fold the surface that does not introduce any tears or pleats is introducing extrinsic curvature (and assuming no hard creases are made, such a transformation is an isometry)!
 
 Another huge implication of the Theorema Egregium is in the field of Cartography. Since $K \equiv 0$ for the plane and $K \equiv +1$ for the sphere, the surfaces must not be isometric. Therefore, one cannot create a distance-preserving projection of the sphere onto the plane. 
-
-## Bibliography
-
-
-## Reference 
