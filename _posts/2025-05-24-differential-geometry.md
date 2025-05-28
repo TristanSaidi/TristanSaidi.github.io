@@ -92,7 +92,7 @@ Figure \textcolor{red}{HERE!} shows an example of the tangent space to a surface
 
 I've omitted the proof, but it arises quite simply from the definitions of the differential and the tangent space. A simple corollary of this result follows too,
 
-**Corollary.** Let $X: U \rightarrow S$ be a local chart around $p$. Then $T_pS = \text{span}\{X_u, X_v\}$.
+**Corollary.** Let $X: U \rightarrow S$ be a local chart around $p$. Then $T_pS = \text{span}\\{X_u, X_v\\}$.
 
 Critically, this means we have access to a basis of our tangent space about each $p \in S$ arising only from the chart $X$. Now that we've established a notion of tangency, we'll do the same for normalcy.
 
