@@ -47,7 +47,7 @@ $$
 This gives us a solid basis of geometric descriptors of a given differentiable curve $\alpha$. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$ is shown in Figure 1.
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/Fig1.jpg" class="img-fluid rounded z-depth-1 w-50" %}
     </div>
 </div>
@@ -99,7 +99,7 @@ T_pS = \{v \in \mathbb{R}^3 \, | \, v \text{ tangential to } S \text{ at } p\}.
 \end{aligned}$$
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/Fig2.jpg" class="img-fluid rounded z-depth-1 w-50" %}
     </div>
 </div>
@@ -124,7 +124,7 @@ A vector field on $S$ (i.e. a differentiable map $V: S \rightarrow \mathbb{R}^3$
 Unitary normal vector fields give rise to the notion of orientability. For example, non-orientable surfaces like the Möbius strip do not admit a global unitary normal vector field. This idea is beatifully illustrated by a painting by M.C. Escher, shown in Figure 3.
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/mc_escher.jpg" class="img-fluid rounded z-depth-1 w-75" %}
     </div>
 </div>
@@ -145,7 +145,7 @@ $$\begin{aligned}
 for $(v,w) \in U \times U$. It is often interpreted as the restriction of the Euclidean inner product to $T_pS$.
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/Fig4.jpg" class="img-fluid rounded z-depth-1 w-50" %}
     </div>
 </div>
@@ -335,7 +335,7 @@ In this section we'll walk through Gauss' Theorema Egregium, one of the major re
 An example of an isometric surface pair, the plane and the S-surface, is shown in Figure 5. These surfaces are isometric because we can bend, but not stretch, the plane so that it coincides with the S-surface. Such a transformation does not distort the length of paths!
 
 <div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/Fig5.jpg" class="img-fluid rounded z-depth-1 w-50" %}
     </div>
 </div>
