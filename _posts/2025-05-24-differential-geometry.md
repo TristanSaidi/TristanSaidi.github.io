@@ -47,16 +47,13 @@ This gives us a solid basis of geometric descriptors of a given differentiable c
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/Fig1.pdf" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Fig1.pdf" class="img-fluid rounded z-depth-1" %}
-    </div>
 </div>
 <div class="caption">
     Figure 1. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$.
 </div>
 
 # Section 2: Geometry of surfaces in $\mathbb{R}^3$
-Now we can graduate to analyzing the geometry of surfaces in $\mathbb{R}^3$. Before we do so, though, we will define the differential of a map $X: \mathbb{R}^2 \rightarrow \mathbb{R}^3$. The differential of $X$ at $p$, denoted $dX_p: \mathbb{R}^2 \rightarrow \mathbb{R}^3$, is a linear map that takes tangent vectors to curves passing through $p$ to the associated tangent vector of the curve induced by $X$, show in Figure \textcolor{red}{HERE}. Formally, let $\alpha:(-\epsilon, \epsilon) \rightarrow \mathbb{R}^2$ be a curve such that $\alpha(0) = p$ and $\alpha'(0) = v$. Then,
+Now we can graduate to analyzing the geometry of surfaces in $\mathbb{R}^3$. Before we do so, though, we will define the differential of a map $X: \mathbb{R}^2 \rightarrow \mathbb{R}^3$. The differential of $X$ at $p$, denoted $dX_p: \mathbb{R}^2 \rightarrow \mathbb{R}^3$, is a linear map that takes tangent vectors to curves passing through $p$ to the associated tangent vector of the curve induced by $X$. Formally, let $\alpha:(-\epsilon, \epsilon) \rightarrow \mathbb{R}^2$ be a curve such that $\alpha(0) = p$ and $\alpha'(0) = v$. Then,
 
 $$
 dX_p(v) = \frac{d}{dt}(X \circ \alpha)\Big|_{t = 0}.
@@ -98,7 +95,16 @@ $$\begin{aligned}
 T_pS = \{v \in \mathbb{R}^3 \, | \, v \text{ tangential to } S \text{ at } p\}.
 \end{aligned}$$
 
-Figure \textcolor{red}{HERE!} shows an example of the tangent space to a surface. This vector space $T_pS$ actually arises directly from the charts used to construct $S$. This is illustrated in the following lemma:
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Fig2.pdf" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 2. A depiction of the tangent space to the surface $S$ at $p$, denoted $T_pS$.
+</div>
+
+Figure 2 shows an example of the tangent space to a surface. This vector space $T_pS$ actually arises directly from the charts used to construct $S$. This is illustrated in the following lemma:
 
 **Lemma.** Let $X: U \rightarrow S$ be a local chart around $p$. Then $T_pS = dX_{X^{-1}(p)}(\mathbb{R}^2)$.
 
@@ -112,7 +118,16 @@ Critically, this means we have access to a basis of our tangent space about each
 
 A vector field on $S$ (i.e. a differentiable map $V: S \rightarrow \mathbb{R}^3$) is called normal if $\forall p \in S$ we have $\langle V(p), w \rangle = 0$ $\forall w \in T_pS$. Furthermore, $V$ is called unitary if $\|V(p)\|_2 = 1 \, \forall p$.
 
-Unitary normal vector fields give rise to the notion of orientability. For example, non-orientable surfaces like the Möbius strip do not admit a global unitary normal vector field. This idea is beatifully illustrated by a painting by M.C. Escher, shown \textcolor{red}{HERE!}
+Unitary normal vector fields give rise to the notion of orientability. For example, non-orientable surfaces like the Möbius strip do not admit a global unitary normal vector field. This idea is beatifully illustrated by a painting by M.C. Escher, shown in Figure 3.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/mc_escher.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 3. M.C. Escher's Mobius Strip II.
+</div>
 
 If it exists, the unitary normal vector field $N: S \rightarrow \mathbb{R}^3$ for a surface $S$ is called the Gauss map. Studying the behavior of the Gauss map will lead to a generalization of the notion of curvature for surfaces.
 
@@ -126,7 +141,16 @@ $$\begin{aligned}
 \end{aligned}$$
 for $(v,w) \in U \times U$. It is often interpreted as the restriction of the Euclidean inner product to $T_pS$.
 
-A visualization of the quantities used in the definition can be seen in \textcolor{red}{HERE!} For me, it is intuitive to think about the matrix representation of $\mathrm{I}_p$. Expanding the definition we see,
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Fig4.pdf" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 4. A depiction of the quantities that comprise the first fundamental form of a surface.
+</div>
+
+A visualization of the quantities used in the definition can be seen in Figure 4. For me, it is intuitive to think about the matrix representation of $\mathrm{I}_p$. Expanding the definition we see,
 
 $$\begin{aligned}
 \mathrm{I}_p(v,w) &= \langle dX_p(v), dX_p(w) \rangle \\
@@ -305,7 +329,16 @@ In this section we'll walk through Gauss' Theorema Egregium, one of the major re
 
 **Definition.** Surfaces $S$, $\tilde{S} \subset \mathbb{R}^3$ are called isometric if there exists a diffeomorphism (a $C^1$ map with a $C^1$ inverse) $f: S \rightarrow \tilde{S}$ that takes each curve on $S$ to a curve of the same length on $\tilde{S}$.
 
-An example of an isometric surface pair, the plane and the S-surface, is shown in \textcolor{red}{HERE!} These surfaces are isometric because we can bend, but not stretch, the plane so that it coincides with the S-surface. Such a transformation does not distort the length of paths!
+An example of an isometric surface pair, the plane and the S-surface, is shown in Figure 5. These surfaces are isometric because we can bend, but not stretch, the plane so that it coincides with the S-surface. Such a transformation does not distort the length of paths!
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Fig5.pdf" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 5. A picture of an isometric pair of surfaces.
+</div>
 
 **Theorem.** Patches of surfaces $S$, $\tilde{S} \subset \mathbb{R}^3$ are isometric if there exist charts $X: U \subset \mathbb{R}^2 \rightarrow S$ and $\tilde{X}: U \subset \mathbb{R}^2 \rightarrow \tilde{S}$ such that the first fundamental form $\mathrm{I}_p$ coincides.
 
