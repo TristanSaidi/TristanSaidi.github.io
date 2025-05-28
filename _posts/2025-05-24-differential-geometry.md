@@ -48,7 +48,7 @@ This gives us a solid basis of geometric descriptors of a given differentiable c
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Fig1.pdf" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Fig1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -100,7 +100,7 @@ T_pS = \{v \in \mathbb{R}^3 \, | \, v \text{ tangential to } S \text{ at } p\}.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Fig2.pdf" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Fig2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -146,7 +146,7 @@ for $(v,w) \in U \times U$. It is often interpreted as the restriction of the Eu
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Fig4.pdf" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Fig4.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -336,7 +336,7 @@ An example of an isometric surface pair, the plane and the S-surface, is shown i
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Fig5.pdf" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Fig5.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
