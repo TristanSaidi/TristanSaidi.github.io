@@ -23,11 +23,13 @@ and call it the unit tangent vector to $\alpha$ at time $t$. Intuitively, we def
 k(t) := \|\alpha^{\prime\prime}(t)\|_2 = \|T'(t)\|_2.
 \end{aligned}
 Put simply, the curvature tells us how quickly the unit tangent vector of our curve changes! A little more digging will give allow us to draw a clear picture of all of these quantities. Notice that, since $\|T(t)\|_2 = 1$, we have
-\begin{aligned}
-\displaylines{\frac{d}{dt} \langle T(t), T(t) \rangle &= 0 \\
+
+$$\begin{aligned}
+\frac{d}{dt} \langle T(t), T(t) \rangle &= 0 \\
 \langle T'(t), T(t) \rangle + \langle T(t), T'(t) \rangle &= 0 \\
-\langle T'(t), T(t) \rangle &= 0.}
-\end{aligned}
+\langle T'(t), T(t) \rangle &= 0.
+\end{aligned}$$
+
 This tells us that $T'(t)$ is necessarily orthogonal to the unit tangent, $T(t)$. We can use this insight to further define the unit normal vector,
 \begin{aligned}
 n(t) := \frac{T'(t)}{\|T'(t)\|_2} = \frac{T'(t)}{k(t)}.
