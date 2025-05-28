@@ -41,7 +41,19 @@ $$
 n(t) := \frac{T'(t)}{\|T'(t)\|_2} = \frac{T'(t)}{k(t)}.
 $$
 
-This gives us a solid basis of geometric descriptors of a given differentiable curve $\alpha$. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$ is shown \textcolor{red}{HERE!}
+This gives us a solid basis of geometric descriptors of a given differentiable curve $\alpha$. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$ is shown in Figure 1.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Fig1.pdf" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Fig1.pdf" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 1. A depiction of an example $\alpha(t)$, $T(t)$ and $n(t)$.
+</div>
 
 # Section 2: Geometry of surfaces in $\mathbb{R}^3$
 Now we can graduate to analyzing the geometry of surfaces in $\mathbb{R}^3$. Before we do so, though, we will define the differential of a map $X: \mathbb{R}^2 \rightarrow \mathbb{R}^3$. The differential of $X$ at $p$, denoted $dX_p: \mathbb{R}^2 \rightarrow \mathbb{R}^3$, is a linear map that takes tangent vectors to curves passing through $p$ to the associated tangent vector of the curve induced by $X$, show in Figure \textcolor{red}{HERE}. Formally, let $\alpha:(-\epsilon, \epsilon) \rightarrow \mathbb{R}^2$ be a curve such that $\alpha(0) = p$ and $\alpha'(0) = v$. Then,
@@ -78,7 +90,7 @@ Now we can finally discuss surfaces in $\mathbb{R}^3$, specifically regular surf
 $X$ is often called a local parameterization or a local chart of $S$. This definition establishes the notion that a regular surface $S \subset \mathbb{R}^3$ can be constructed by stitching together deformations of patches of $\mathbb{R}^2$. Then, by analyzing these deformations we'll be able to quantify and characterize the geometry of $S$!
 
 ## Tangent curves and spaces
-We'll now define the notion of a tangent space to a point, a critical geometric object in Differential Geometry. Given a regular surface $S \subset \mathbb{R}^3$, we we say $v \in \mathbb{R}^3$ is a tangent vector if there exists a curve $\alpha:(-\epsilon,\epsilon) \rightarrow S$ such that $\alpha(0) = p$ and $\alpha'(0) = v$. A visualization is provided \textcolor{red}{HERE!}
+We'll now define the notion of a tangent space to a point, a critical geometric object in Differential Geometry. Given a regular surface $S \subset \mathbb{R}^3$, we we say $v \in \mathbb{R}^3$ is a tangent vector if there exists a curve $\alpha:(-\epsilon,\epsilon) \rightarrow S$ such that $\alpha(0) = p$ and $\alpha'(0) = v$. 
 
 **Definition.** The tangent space to $S$ at $p$ is defined as
 
@@ -297,7 +309,7 @@ An example of an isometric surface pair, the plane and the S-surface, is shown i
 
 **Theorem.** Patches of surfaces $S$, $\tilde{S} \subset \mathbb{R}^3$ are isometric if there exist charts $X: U \subset \mathbb{R}^2 \rightarrow S$ and $\tilde{X}: U \subset \mathbb{R}^2 \rightarrow \tilde{S}$ such that the first fundamental form $\mathrm{I}_p$ coincides.
 
-Proof sketch: An isometric map between patches of $S$ and $\tilde{S}$ preserves path lengths. We also have shown that the distortion of such path lengths incurred by the charts $X$ and $\tilde{X}$ is determined completely by their respective first fundamental forms. From here, it's not hard to show that since an isometry exists (and path lengths are therefore preserved under this map) the first fundamental forms of the two surfaces must coincide. \textcolor{red}{ADD FIGURE HERE!}
+Proof sketch: An isometric map between patches of $S$ and $\tilde{S}$ preserves path lengths. We also have shown that the distortion of such path lengths incurred by the charts $X$ and $\tilde{X}$ is determined completely by their respective first fundamental forms. From here, it's not hard to show that since an isometry exists (and path lengths are therefore preserved under this map) the first fundamental forms of the two surfaces must coincide.
 
 Now we are in a position where we can state Gauss' Theorema Egregium.
 
