@@ -281,6 +281,7 @@ k_2(p) &= \lambda_2.
 \end{aligned}$$
 
 This gives rise to new equations for the Gaussian and mean curvatures:
+
 $$\begin{aligned}
 K(p) &= \det(-J_N) = \frac{eg - f^2}{EG - F^2} \\
 H(p) &= \frac{1}{2} \mathrm{Tr}(-J_N) = \frac{1}{2}\frac{eG + gE - 2fF}{EG - F^2}.
