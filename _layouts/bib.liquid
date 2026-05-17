@@ -93,10 +93,14 @@
         >
           {% if publication_marker_url %}
             <a href="{{ publication_marker_url }}">
-              {% if is_home_page %}<i class="{{ publication_marker_icon }} mr-1" aria-hidden="true"></i>{% endif %}<span>{{ publication_marker_label }}</span>
+              {% if is_home_page %}<i class="{{ publication_marker_icon }} mr-1" aria-hidden="true"></i>{% endif -%}
+              <span>{{ publication_marker_label }}</span>
             </a>
           {% else %}
-            <div>{% if is_home_page %}<i class="{{ publication_marker_icon }} mr-1" aria-hidden="true"></i>{% endif %}<span>{{ publication_marker_label }}</span></div>
+            <div>
+              {% if is_home_page %}<i class="{{ publication_marker_icon }} mr-1" aria-hidden="true"></i>{% endif -%}
+              <span>{{ publication_marker_label }}</span>
+            </div>
           {% endif %}
         </abbr>
       {% endif %}
