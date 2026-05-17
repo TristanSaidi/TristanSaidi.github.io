@@ -56,7 +56,6 @@ GEM
     feedjira (3.2.1)
       loofah (>= 2.3.1)
       sax-machine (>= 1.0)
-    ffi (1.17.1-arm-linux)
     ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux)
@@ -198,7 +197,6 @@ GEM
     zeitwerk (2.6.18)
 
 PLATFORMS
-  arm-linux
   arm64-darwin
   x86_64-darwin
   x86_64-linux
