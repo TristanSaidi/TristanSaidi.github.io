@@ -13,7 +13,7 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+all_publications: true # includes all publications from _bibliography/papers.bib
 social: true # includes social icons at the bottom of the page
 
 announcements:
