@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Talk at CMU Causal Inference group 🎤
+🎤 Talk at CMU Causal Inference group
