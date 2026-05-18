@@ -43,7 +43,7 @@
   {% assign is_arxiv = true %}
 {% endif %}
 
-{% if publication_venue_key == blank and is_arxiv and site.data.venues.arXiv %}
+{% if publication_venue_key == blank and is_arxiv %}
   {% assign publication_venue_key = 'arXiv' %}
 {% endif %}
 
