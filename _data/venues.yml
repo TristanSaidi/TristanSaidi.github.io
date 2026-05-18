@@ -7,3 +7,23 @@
 
 "Vision":
   color: "#009f36"
+
+"arXiv":
+  label: arXiv
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"ICLR":
+  label: ICLR
+  url: https://iclr.cc/
+  color: "#364fc7"
+
+"Nature Materials":
+  label: Nat. Mater.
+  url: https://www.nature.com/nmat/
+  color: "#2b8a3e"
+
+"Autonomous Robots":
+  label: Auton. Robots
+  url: https://link.springer.com/journal/10514
+  color: "#9c36b5"

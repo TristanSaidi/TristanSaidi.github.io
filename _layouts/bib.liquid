@@ -10,19 +10,30 @@
   {% assign show_publication_thumbnail = false %}
 {% endif %}
 
-{% assign show_publication_marker = false %}
-{% if entry.abbr or is_home_page %}
-  {% assign show_publication_marker = true %}
-{% endif %}
-
 {% assign publication_marker_label = entry.abbr %}
 {% assign publication_marker_title = entry.abbr %}
 {% assign publication_marker_url = null %}
 {% assign publication_marker_icon = 'fa-solid fa-building-columns' %}
 {% assign publication_marker_style = null %}
+{% assign publication_venue_key = null %}
 {% assign is_arxiv = false %}
 {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
 {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+
+{% if entry.abbr and site.data.venues[entry.abbr] %}
+  {% assign publication_venue_key = entry.abbr %}
+{% elsif entry.journal and site.data.venues[entry.journal] %}
+  {% assign publication_venue_key = entry.journal %}
+{% elsif proceedings contains entry.type and entry.booktitle and site.data.venues[entry.booktitle] %}
+  {% assign publication_venue_key = entry.booktitle %}
+{% elsif thesis contains entry.type and entry.school and site.data.venues[entry.school] %}
+  {% assign publication_venue_key = entry.school %}
+{% endif %}
+
+{% assign show_publication_marker = false %}
+{% if entry.abbr or publication_venue_key or is_home_page %}
+  {% assign show_publication_marker = true %}
+{% endif %}
 
 {% if entry.arxiv or entry.eprint %}
   {% assign is_arxiv = true %}
@@ -50,12 +61,16 @@
       {% assign publication_marker_url = entry.eprint | prepend: 'https://arxiv.org/abs/' %}
     {% endif %}
   {% else %}
-    {% if entry.abbr and site.data.venues[entry.abbr] %}
-      {% if site.data.venues[entry.abbr].color != blank %}
-        {% assign publication_marker_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
+    {% if publication_venue_key and site.data.venues[publication_venue_key] %}
+      {% if publication_marker_label == blank %}
+        {% assign publication_marker_label = site.data.venues[publication_venue_key].label | default: publication_venue_key %}
       {% endif %}
-      {% if site.data.venues[entry.abbr].url %}
-        {% assign publication_marker_url = site.data.venues[entry.abbr].url %}
+      {% assign publication_marker_title = site.data.venues[publication_venue_key].name | default: publication_marker_title %}
+      {% if site.data.venues[publication_venue_key].color != blank %}
+        {% assign publication_marker_style = site.data.venues[publication_venue_key].color | prepend: 'style="background-color:' | append: '"' %}
+      {% endif %}
+      {% if site.data.venues[publication_venue_key].url %}
+        {% assign publication_marker_url = site.data.venues[publication_venue_key].url %}
       {% endif %}
     {% endif %}
 
