@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Quantitative research intern at Citadel Securities
+💼 Quantitative research intern at Citadel Securities
