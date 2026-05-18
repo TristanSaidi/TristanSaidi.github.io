@@ -1,7 +1,7 @@
 <div class="publications">
-  {% if page.all_publications %}
-    {% bibliography --group_by none %}
+{% if page.all_publications %}
+    {% bibliography --group_by none --sort_by year,month --order descending %}
   {% else %}
-    {% bibliography --group_by none --query @*[selected=true]* %}
+    {% bibliography --group_by none --sort_by year,month --order descending --query @*[selected=true]* %}
   {% endif %}
 </div>

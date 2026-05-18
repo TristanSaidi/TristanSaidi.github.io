@@ -57,8 +57,6 @@
       {% if site.data.venues[entry.abbr].url %}
         {% assign publication_marker_url = site.data.venues[entry.abbr].url %}
       {% endif %}
-    {% elsif is_home_page %}
-      {% assign publication_marker_label = 'Venue' %}
     {% endif %}
 
     {% if publication_marker_title == blank %}
@@ -70,6 +68,14 @@
         {% assign publication_marker_title = entry.school %}
       {% else %}
         {% assign publication_marker_title = 'Publication venue' %}
+      {% endif %}
+    {% endif %}
+
+    {% if is_home_page and publication_marker_label == blank %}
+      {% if publication_marker_title != blank %}
+        {% assign publication_marker_label = publication_marker_title %}
+      {% else %}
+        {% assign publication_marker_label = 'Venue' %}
       {% endif %}
     {% endif %}
   {% endif %}
