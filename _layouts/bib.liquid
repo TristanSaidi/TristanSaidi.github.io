@@ -30,11 +30,6 @@
   {% assign publication_venue_key = entry.school %}
 {% endif %}
 
-{% assign show_publication_marker = false %}
-{% if entry.abbr or publication_venue_key or is_home_page %}
-  {% assign show_publication_marker = true %}
-{% endif %}
-
 {% if entry.arxiv or entry.eprint %}
   {% assign is_arxiv = true %}
 {% endif %}
@@ -46,6 +41,15 @@
 {% endif %}
 {% if entry.journal and entry.journal contains 'arXiv' %}
   {% assign is_arxiv = true %}
+{% endif %}
+
+{% if publication_venue_key == blank and is_arxiv and site.data.venues.arXiv %}
+  {% assign publication_venue_key = 'arXiv' %}
+{% endif %}
+
+{% assign show_publication_marker = false %}
+{% if entry.abbr or publication_venue_key or is_home_page %}
+  {% assign show_publication_marker = true %}
 {% endif %}
 
 {% if show_publication_marker %}
