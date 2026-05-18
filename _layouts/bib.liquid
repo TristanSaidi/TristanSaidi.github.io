@@ -72,11 +72,7 @@
     {% endif %}
 
     {% if is_home_page and publication_marker_label == blank %}
-      {% if publication_marker_title != blank %}
-        {% assign publication_marker_label = publication_marker_title %}
-      {% else %}
-        {% assign publication_marker_label = 'Venue' %}
-      {% endif %}
+      {% assign publication_marker_label = publication_marker_title | default: 'Venue' %}
     {% endif %}
   {% endif %}
 {% endif %}
