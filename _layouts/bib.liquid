@@ -9,6 +9,9 @@
 {% if is_home_page %}
   {% assign show_publication_thumbnail = false %}
 {% endif %}
+{% if page.url == '/publications/' %}
+  {% assign show_publication_thumbnail = false %}
+{% endif %}
 
 {% assign publication_marker_label = entry.abbr %}
 {% assign publication_marker_title = entry.abbr %}
@@ -57,6 +60,9 @@
     {% assign publication_marker_label = 'arXiv' %}
     {% assign publication_marker_title = 'arXiv preprint' %}
     {% assign publication_marker_icon = 'ai ai-arxiv' %}
+    {% if site.data.venues.arXiv and site.data.venues.arXiv.color != blank %}
+      {% assign publication_marker_style = site.data.venues.arXiv.color | prepend: 'style="background-color:' | append: '"' %}
+    {% endif %}
     {% if entry.url %}
       {% assign publication_marker_url = entry.url %}
     {% elsif entry.arxiv %}
