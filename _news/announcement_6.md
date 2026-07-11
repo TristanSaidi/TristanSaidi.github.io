@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-📚 Our paper on Stochastic Neighbor Embeddings was published in the Proceedings of the National Academy of Sciences
+📚 Our paper on Stochastic Neighbor Embeddings was published in PNAS
