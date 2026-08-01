@@ -725,8 +725,10 @@ footer.sticky-bottom {
     list-style: none;
     padding: 0;
     margin-top: 0;
+    counter-reset: publication-item;
 
     li {
+      counter-increment: publication-item;
       margin-bottom: 1rem;
 
       .preview {
@@ -870,12 +872,91 @@ footer.sticky-bottom {
       div.abstract.hidden.open {
         border-color: var(--global-text-color);
       }
+
+      .compact-publication {
+        position: relative;
+        margin: 0;
+        padding-left: 3rem;
+
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0.15rem;
+          color: var(--global-text-color-light);
+          content: "[" counter(publication-item) "]";
+          font-size: 0.95rem;
+        }
+
+        .compact-publication__content {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+
+        .title {
+          font-size: 1.05rem;
+          font-weight: 600;
+          line-height: 1.45;
+
+          a {
+            color: var(--global-theme-color);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .author {
+          margin-top: 0.2rem;
+        }
+
+        .compact-publication__periodical {
+          color: var(--global-text-color-light);
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .compact-publication__links {
+          margin-top: 0.35rem;
+
+          a.btn {
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+            margin-right: 0.75rem;
+            margin-bottom: 0.2rem;
+            color: var(--global-theme-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+
+            &:hover {
+              border-color: transparent;
+              color: var(--global-hover-color);
+            }
+          }
+
+          a.award.btn,
+          a.arxiv.btn {
+            border-color: transparent;
+          }
+        }
+      }
     }
     div.award.hidden {
       border: dashed 1px var(--global-bg-color);
     }
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
+    }
+  }
+
+  @media (max-width: 576px) {
+    ol.bibliography li .compact-publication {
+      padding-left: 2.4rem;
+
+      &::before {
+        font-size: 0.85rem;
+      }
     }
   }
 }
