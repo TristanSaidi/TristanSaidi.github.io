@@ -27,7 +27,7 @@ end
 
 # Gems for development or external data fetching (outside :jekyll_plugins)
 group :other_plugins do
-    gem 'css_parser'
+    gem 'css_parser', '>= 3.0.0'
     gem 'feedjira'
     gem 'httparty'
     gem 'observer'       # used by jekyll-scholar
@@ -36,3 +36,5 @@ group :other_plugins do
     # gem 'unicode_utils' -- should be already installed by jekyll
     # gem 'webrick' -- should be already installed by jekyll
 end
+
+gem "logger", "~> 1.7"
