@@ -12,6 +12,10 @@
 {% if page.url == '/publications/' %}
   {% assign show_publication_thumbnail = false %}
 {% endif %}
+{% assign use_compact_publication_layout = false %}
+{% if is_home_page or page.url == '/publications/' %}
+  {% assign use_compact_publication_layout = true %}
+{% endif %}
 
 {% assign publication_marker_label = entry.abbr %}
 {% assign publication_marker_title = entry.abbr %}
@@ -106,8 +110,33 @@
 {% if show_publication_thumbnail or show_publication_marker %}
   {% assign show_publication_column = true %}
 {% endif %}
+{% if use_compact_publication_layout %}
+  {% assign show_publication_column = false %}
+{% endif %}
 
-<div class="row">
+{% assign publication_title_url = entry.url %}
+{% if publication_title_url == blank and entry.doi %}
+  {% assign publication_title_url = entry.doi | prepend: 'https://doi.org/' %}
+{% endif %}
+{% if publication_title_url == blank and entry.arxiv %}
+  {% assign publication_title_url = entry.arxiv | prepend: 'https://arxiv.org/abs/' %}
+{% endif %}
+{% if publication_title_url == blank and entry.html %}
+  {% if entry.html contains '://' %}
+    {% assign publication_title_url = entry.html %}
+  {% else %}
+    {% assign publication_title_url = entry.html | prepend: '/assets/html/' | relative_url %}
+  {% endif %}
+{% endif %}
+{% if publication_title_url == blank and entry.pdf %}
+  {% if entry.pdf contains '://' %}
+    {% assign publication_title_url = entry.pdf %}
+  {% else %}
+    {% assign publication_title_url = entry.pdf | prepend: '/assets/pdf/' | relative_url %}
+  {% endif %}
+{% endif %}
+
+<div class="row{% if use_compact_publication_layout %} compact-publication{% endif %}">
   {% if show_publication_column %}
     <div class="col col-sm-2 abbr">
       {% if show_publication_marker and publication_marker_label %}
@@ -152,9 +181,18 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if show_publication_column %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div
+    id="{{ entry.key }}"
+    class="{% if use_compact_publication_layout %}col-12{% elsif show_publication_column %}col-sm-8{% else %}col-sm-10{% endif %}{% if use_compact_publication_layout %} compact-publication__content{% endif %}"
+  >
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {% if use_compact_publication_layout and publication_title_url %}
+        <a href="{{ publication_title_url }}">{{ entry.title }}</a>
+      {% else %}
+        {{ entry.title }}
+      {% endif %}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -282,15 +320,15 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
+    <div class="periodical{% if use_compact_publication_layout %} compact-publication__periodical{% endif %}">
       {{ periodical | strip }}
     </div>
-    <div class="periodical">
+    <div class="periodical{% if use_compact_publication_layout %} compact-publication__periodical{% endif %}">
       {{ entry.note | strip }}
     </div>
 
     <!-- Links/Buttons -->
-    <div class="links">
+    <div class="links{% if use_compact_publication_layout %} compact-publication__links{% endif %}">
       {% if entry.award %}
         <a class="award btn btn-sm z-depth-0" role="button">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
