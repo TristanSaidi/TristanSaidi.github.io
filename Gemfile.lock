@@ -42,11 +42,12 @@ GEM
       rexml
     csl-styles (1.0.1.11)
       csl (~> 1.0)
-    css_parser (2.2.0)
+    css_parser (1.22.0)
       addressable
     cssminify2 (2.0.1)
     date (3.4.1)
     deep_merge (1.2.2)
+    drb (2.2.3)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -143,12 +144,15 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     matrix (0.4.2)
     mercenary (0.4.0)
-    minitest (5.25.4)
+    minitest (6.0.6)
+      drb (~> 2.0)
+      prism (~> 1.5)
     namae (1.2.0)
       racc (~> 1.7)
     nokogiri (1.19.3-arm64-darwin)
@@ -165,6 +169,7 @@ GEM
     ostruct (0.6.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    prism (1.9.0)
     public_suffix (5.1.1)
     racc (1.8.1)
     rb-fsevent (0.11.2)
@@ -220,6 +225,7 @@ DEPENDENCIES
   jekyll-toc
   jekyll-twitter-plugin
   jemoji
+  logger (~> 1.7)
   observer
   ostruct
 
