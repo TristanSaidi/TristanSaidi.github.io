@@ -1,4 +1,31 @@
 $(document).ready(function () {
+  // Hover previews close on departure; clicking pins the abstract for reading.
+  document.querySelectorAll(".publication-abstract").forEach(function (details) {
+    const publication = details.closest(".row");
+    let pinned = false;
+    publication.addEventListener("mouseenter", function () {
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) details.open = true;
+    });
+    publication.addEventListener("mouseleave", function () {
+      if (!pinned && !details.contains(document.activeElement)) details.open = false;
+    });
+    details.querySelector("summary").addEventListener("click", function (event) {
+      event.preventDefault();
+      pinned = !pinned;
+      details.open = pinned;
+    });
+    details.addEventListener("focusout", function (event) {
+      if (!pinned && !details.contains(event.relatedTarget) && !publication.matches(":hover")) details.open = false;
+    });
+    details.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        pinned = false;
+        details.open = false;
+        details.querySelector("summary").focus();
+      }
+    });
+  });
+
   // add toggle functionality to abstract, award and bibtex buttons
   $("a.abstract").click(function () {
     $(this).parent().parent().find(".abstract.hidden").toggleClass("open");

@@ -865,6 +865,34 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
       }
 
+      .publication-abstract {
+        margin-top: 0.35rem;
+        font-size: 0.9rem;
+
+        summary {
+          width: fit-content;
+          color: var(--global-theme-color);
+          cursor: pointer;
+
+          &:focus-visible {
+            outline: 2px solid var(--global-theme-color);
+            outline-offset: 3px;
+          }
+        }
+
+        .publication-abstract__body {
+          margin-top: 0.5rem;
+          padding: 0.75rem 1rem;
+          border-left: 2px solid var(--global-theme-color);
+          background: var(--global-code-bg-color);
+          line-height: 1.6;
+
+          p {
+            margin: 0 0 0.5rem;
+          }
+        }
+      }
+
       div.abstract.hidden {
         border: dashed 1px var(--global-bg-color);
       }

@@ -309,6 +309,8 @@ filtered_bibtex_keywords:
   [
     abbr,
     abstract,
+    abstract_summary,
+    abstract_source,
     additional_info,
     altmetric,
     annotation,
