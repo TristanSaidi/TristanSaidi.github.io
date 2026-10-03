@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-introduction-to-differential-geometry",
+        },{id: "post-wasserstein-parallel-transport-for-distributional-dynamics",
+        
+          title: "Wasserstein Parallel Transport for Distributional Dynamics",
+        
+        description: "Many statistical systems are more naturally represented by probability distributions than vectors. This post describes a geometric way to transfer dynamics between distributions using optimal transport and parallel transport on Wasserstein space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/wasserstein-parallel-transport/";
+          
+        },
+      },{id: "post-introduction-to-differential-geometry",
         
           title: "Introduction to Differential Geometry",
         
