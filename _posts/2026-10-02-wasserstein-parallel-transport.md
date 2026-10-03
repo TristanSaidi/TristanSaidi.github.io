@@ -10,7 +10,7 @@ related_posts: false
 
 Before we start, I want to mention that this blog is a pedagogical overview of our paper [Wasserstein Parallel Transport for Predicting the Dynamics of Statistical Systems](https://arxiv.org/abs/2603.23736), joint with Gonzalo Mena, Larry Wasserman and Florian Gunsilius. My goal here is not to reproduce all of the technical details of the paper, but rather to explain the idea behind it. If you want some background on manifolds, tangent spaces and Riemannian geometry, I wrote a separate [Introduction to Differential Geometry](/blog/2025/differential-geometry/) that develops some of these ideas from a more classical perspective.
 
-The basic problem is simple to state. Suppose we observe how one probability distribution changes over time. How should we transfer that *dynamics* to a second distribution which starts somewhere else?
+The basic problem is simple to state. Suppose we observe how one probability distribution changes over time. How should we transfer that _dynamics_ to a second distribution which starts somewhere else?
 
 For vectors, this is easy: compute the change in the first system and add the same change to the second. For probability distributions, there is no equally obvious notion of adding a ``change'' to a new baseline. The main idea of Wasserstein Parallel Transport is to replace this vector arithmetic with its natural generalization through Riemannian geometry.
 
@@ -48,7 +48,7 @@ $$
 \mu_{t+1}^* = \mu_t^* + \left(\nu_{t+1}-\nu_t\right),
 $$
 
-but this expression is not geometrically meaningful. Of course, one *can* subtract two probability measures as signed measures, but the result is not a probability measure and the subtraction does not describe how mass moves from one distribution to another.
+but this expression is not geometrically meaningful. Of course, one _can_ subtract two probability measures as signed measures, but the result is not a probability measure and the subtraction does not describe how mass moves from one distribution to another.
 
 This is the central issue: the space of probability distributions is not naturally a vector space for the problem we care about. The replacement, which stems from the natural generalization of the vector space operations above, will be
 
@@ -98,7 +98,7 @@ $$
 \int \|x-T(x)\|_2^2\,d\mu(x).
 $$
 
-A map cannot split mass, so it is often more convenient to relax the problem to a *coupling*. A coupling $\gamma$ is a joint probability distribution on $(X,Y)$ whose marginals are $\mu$ and $\nu$. This gives the $2$-Wasserstein distance,
+A map cannot split mass, so it is often more convenient to relax the problem to a _coupling_. A coupling $\gamma$ is a joint probability distribution on $(X,Y)$ whose marginals are $\mu$ and $\nu$. This gives the $2$-Wasserstein distance,
 
 $$
 W_2^2(\mu,\nu)
@@ -222,7 +222,7 @@ $$
 
 are different tangent spaces. On a curved space there is no canonical reason that a vector based at one point should also be a vector based at another.
 
-This is the role of a *connection*. A connection tells us how to differentiate vector fields while accounting for the geometry of the underlying space. The Levi--Civita connection is the unique connection inducing a classical notion of differentiation without distorting the geometry of the space. 
+This is the role of a _connection_. A connection tells us how to differentiate vector fields while accounting for the geometry of the underlying space. The Levi--Civita connection is the unique connection inducing a classical notion of differentiation without distorting the geometry of the space.
 
 For Wasserstein space, suppose $(\mu_t)$ is a curve with tangent velocity $\nabla\phi_t$, and let $v_t$ be another vector field along the curve. The Wasserstein covariant derivative takes the form
 
@@ -352,7 +352,8 @@ $$
 $$
 
 and repeatedly apply the local transport step. A local error of order $N^{-2}$ accumulated across $N$ steps gives a global error of order $N^{-1}$, and the paper makes this argument precise under appropriate assumptions.
-<!-- 
+
+<!--
 In the general manifold setting, the paper packages this idea into a *fanning scheme*: base-manifold parallel transport can itself be approximated using Jacobi fields. For $M=\mathbb{R}^d$, that base-space parallel transport is just the identity, leaving the Brenier matching + tangent-space projection picture above. The important point for this post is that we can approximate Wasserstein parallel transport through tractable geometric primitives rather than directly solving the parallel-transport PDE. -->
 
 # Section 6: Wasserstein Parallel Trends
@@ -363,7 +364,7 @@ $$
 \nu_0,\nu_1,\ldots,\nu_T
 $$
 
-and know the initial target distribution $\mu_0^*$. We want to reconstruct the target trajectory that would exhibit the *same intrinsic dynamics* as the reference trajectory while starting from a different baseline.
+and know the initial target distribution $\mu_0^*$. We want to reconstruct the target trajectory that would exhibit the _same intrinsic dynamics_ as the reference trajectory while starting from a different baseline.
 
 The reference change from time $i$ to $i+1$ is the Wasserstein logarithm
 
@@ -508,7 +509,7 @@ $$
 
 So the two pieces of the tangent vector have immediate interpretations: $a_t$ controls how the mean moves, while $A_t$ controls how the covariance deforms.
 
-This is already enough to see why transporting a *full tangent vector* is richer than transporting a mean trend. Two Gaussian systems can have identical mean dynamics while one expands, contracts or rotates its covariance structure. Wasserstein parallel transport moves this covariance dynamics along with the location dynamics.
+This is already enough to see why transporting a _full tangent vector_ is richer than transporting a mean trend. Two Gaussian systems can have identical mean dynamics while one expands, contracts or rotates its covariance structure. Wasserstein parallel transport moves this covariance dynamics along with the location dynamics.
 
 In our paper, parallel transport between Gaussian measures can be computed in closed form by reducing the problem to a continuous Lyapunov equation. The figures below give two examples of the same reference tangent $v$ being transported to different Gaussian baselines. The resulting endpoint depends on the geometry of the baseline distribution, not just on the Euclidean vector attached to its mean.
 

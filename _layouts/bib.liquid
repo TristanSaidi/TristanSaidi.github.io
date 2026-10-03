@@ -136,7 +136,13 @@
   {% endif %}
 {% endif %}
 
-<div class="row{% if use_compact_publication_layout %} compact-publication{% endif %}">
+<div
+  class="row{% if use_compact_publication_layout %} compact-publication{% endif %}{% if entry.abstract or entry.abstract_summary %} has-publication-abstract{% endif %}"
+  {% if entry.abstract or entry.abstract_summary %}
+    tabindex="0"
+    aria-label="Publication: {{ entry.title | escape }}"
+  {% endif %}
+>
   {% if show_publication_column %}
     <div class="col col-sm-2 abbr">
       {% if show_publication_marker and publication_marker_label %}
@@ -486,19 +492,18 @@
     {% endif %}
 
     {% if entry.abstract or entry.abstract_summary %}
-      <details class="publication-abstract">
-        <summary aria-label="Abstract for {{ entry.title | escape }}">
-          Abstract{% if entry.abstract == blank %} summary{% endif %}
-        </summary>
-        <div class="publication-abstract__body">
-          <p>
-            {% if entry.abstract %}{{ entry.abstract }}{% else %}{{ entry.abstract_summary }}{% endif %}
-          </p>
-          {% if entry.abstract == blank and entry.abstract_source %}
-            <a href="{{ entry.abstract_source }}">Read the full abstract</a>
-          {% endif %}
+      <div class="publication-abstract">
+        <div class="publication-abstract__clip">
+          <div class="publication-abstract__body">
+            <p>
+              {% if entry.abstract %}{{ entry.abstract }}{% else %}{{ entry.abstract_summary }}{% endif %}
+            </p>
+            {% if entry.abstract == blank and entry.abstract_source %}
+              <a href="{{ entry.abstract_source }}">Read the full abstract</a>
+            {% endif %}
+          </div>
         </div>
-      </details>
+      </div>
     {% endif %}
 
     {% if entry.bibtex_show %}

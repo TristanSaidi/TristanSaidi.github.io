@@ -866,18 +866,17 @@ footer.sticky-bottom {
       }
 
       .publication-abstract {
-        margin-top: 0.35rem;
+        display: grid;
+        grid-template-rows: 0fr;
+        visibility: hidden;
         font-size: 0.9rem;
+        transition:
+          grid-template-rows 0.35s ease,
+          visibility 0s linear 0.35s;
 
-        summary {
-          width: fit-content;
-          color: var(--global-theme-color);
-          cursor: pointer;
-
-          &:focus-visible {
-            outline: 2px solid var(--global-theme-color);
-            outline-offset: 3px;
-          }
+        .publication-abstract__clip {
+          min-height: 0;
+          overflow: hidden;
         }
 
         .publication-abstract__body {
@@ -890,6 +889,31 @@ footer.sticky-bottom {
           p {
             margin: 0 0 0.5rem;
           }
+        }
+      }
+
+      .has-publication-abstract:focus-within .publication-abstract {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        transition-delay: 0s;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .has-publication-abstract:hover .publication-abstract {
+          grid-template-rows: 1fr;
+          visibility: visible;
+          transition-delay: 0s;
+        }
+      }
+
+      .has-publication-abstract:focus-visible {
+        outline: 2px solid var(--global-theme-color);
+        outline-offset: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .publication-abstract {
+          transition: none;
         }
       }
 
