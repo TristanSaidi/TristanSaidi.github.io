@@ -8,11 +8,11 @@ categories:
 related_posts: false
 ---
 
-Before we start, I want to mention that this blog is a pedagogical overview of our paper [Wasserstein Parallel Transport for Predicting the Dynamics of Statistical Systems](https://arxiv.org/abs/2603.23736), joint with Gonzalo Mena, Larry Wasserman and Florian Gunsilius. My goal here is not to reproduce all of the technical details of the paper, but rather to explain the geometric idea behind it. If you want some background on manifolds, tangent spaces and Riemannian geometry, I wrote a separate [Introduction to Differential Geometry](/blog/2025/differential-geometry/) that develops some of these ideas from a more classical perspective.
+Before we start, I want to mention that this blog is a pedagogical overview of our paper [Wasserstein Parallel Transport for Predicting the Dynamics of Statistical Systems](https://arxiv.org/abs/2603.23736), joint with Gonzalo Mena, Larry Wasserman and Florian Gunsilius. My goal here is not to reproduce all of the technical details of the paper, but rather to explain the idea behind it. If you want some background on manifolds, tangent spaces and Riemannian geometry, I wrote a separate [Introduction to Differential Geometry](/blog/2025/differential-geometry/) that develops some of these ideas from a more classical perspective.
 
 The basic problem is simple to state. Suppose we observe how one probability distribution changes over time. How should we transfer that *dynamics* to a second distribution which starts somewhere else?
 
-For vectors, this is easy: compute the change in the first system and add the same change to the second. For probability distributions, there is no equally obvious notion of adding a ``change'' to a new baseline. The main idea of Wasserstein Parallel Transport is to replace this vector arithmetic with Riemannian geometry.
+For vectors, this is easy: compute the change in the first system and add the same change to the second. For probability distributions, there is no equally obvious notion of adding a ``change'' to a new baseline. The main idea of Wasserstein Parallel Transport is to replace this vector arithmetic with its natural generalization through Riemannian geometry.
 
 # Section 1: Parallel trends without a vector space
 
@@ -50,9 +50,7 @@ $$
 
 but this expression is not geometrically meaningful. Of course, one *can* subtract two probability measures as signed measures, but the result is not a probability measure and the subtraction does not describe how mass moves from one distribution to another.
 
-This is the central issue: the space of probability distributions is not naturally a vector space for the problem we care about.
-
-The geometric replacement will be
+This is the central issue: the space of probability distributions is not naturally a vector space for the problem we care about. The replacement, which stems from the natural generalization of the vector space operations above, will be
 
 $$
 \boxed{
@@ -158,7 +156,7 @@ $$
 \qquad t\in[0,1].
 $$
 
-This path is the Wasserstein geodesic between $\mu_0$ and $\mu_1$. At this point, we have more than a distance: we have shortest paths and velocity fields. This is exactly what we need to start thinking in Riemannian terms.
+This path is the Wasserstein geodesic between $\mu_0$ and $\mu_1$. At this point, we have more than a distance: we have shortest paths (geodesics) and velocity fields (tangent vectors). This is exactly what we need to reason about the Riemannian geometry on the space of probability measures endowed by optimal transport.
 
 # Section 3: The Riemannian geometry of Wasserstein space
 
@@ -184,9 +182,9 @@ g_\mu(v,w)
 \int \langle v(x),w(x)\rangle\,d\mu(x).
 $$
 
-This is sometimes called Otto's formal Riemannian calculus on Wasserstein space. There are technical qualifications to the word ``manifold'' here---$\mathcal{P}_2(\mathbb{R}^d)$ is not a smooth Hilbert manifold in complete generality---but the tangent-space and covariant-derivative constructions can be made rigorous in the regular settings we use.
+This is sometimes called Otto's formal Riemannian calculus on Wasserstein space. There are technical qualifications to the word ``manifold'' here---$\mathcal{P}_2(\mathbb{R}^d)$ is not a smooth Hilbert manifold in complete generality---but the tangent-space and covariant-derivative constructions can be made rigorous in many useful settings.
 
-In Euclidean Wasserstein space, the logarithmic map has an especially intuitive form. If $T_{\mu\rightarrow\nu}$ is the Brenier map, then
+In the Wasserstein space of probability measures over $\mathbb R^d$, the logarithmic map has an especially intuitive form. If $T_{\mu\rightarrow\nu}$ is the Brenier map, then
 
 $$
 \operatorname{Log}_\mu(\nu)
@@ -224,7 +222,7 @@ $$
 
 are different tangent spaces. On a curved space there is no canonical reason that a vector based at one point should also be a vector based at another.
 
-This is the role of a *connection*. A connection tells us how to differentiate vector fields while accounting for the geometry of the underlying space. The distinguished connection on a Riemannian manifold is the Levi--Civita connection: it is metric-compatible and torsion-free.
+This is the role of a *connection*. A connection tells us how to differentiate vector fields while accounting for the geometry of the underlying space. The Levi--Civita connection is the unique connection inducing a classical notion of differentiation without distorting the geometry of the space. 
 
 For Wasserstein space, suppose $(\mu_t)$ is a curve with tangent velocity $\nabla\phi_t$, and let $v_t$ be another vector field along the curve. The Wasserstein covariant derivative takes the form
 
@@ -255,9 +253,9 @@ $$
 \partial_t v_t + Dv_t\,\nabla\phi_t
 $$
 
-is the usual material derivative: it differentiates the vector field while moving with the flow of $\mu_t$. The projection is necessary because the material derivative need not itself be a gradient field.
+is the usual full derivative: it differentiates the vector field while moving with the flow of $\mu_t$. The projection is necessary because the full derivative need not itself be a gradient field.
 
-For me, this projection is one of the cleanest ways to understand the Wasserstein geometry. The ambient space contains all square-integrable vector fields, while the tangent space remembers only the gradient component that actually changes the probability distribution. The remaining component is invisible to the continuity equation.
+<!-- For me, this projection is one of the cleanest ways to understand the Wasserstein geometry. The ambient space contains all square-integrable vector fields, while the tangent space remembers only the gradient component that actually changes the probability distribution. The remaining component is invisible to the continuity equation. -->
 
 # Section 4: Parallel transport
 
@@ -275,9 +273,9 @@ $$
 \operatorname{PT}_{\mu_0\rightarrow\mu_1}(v_0).
 $$
 
-Parallel transport is the correct geometric notion of moving a vector from one tangent space to another without introducing artificial rotation or distortion from our choice of coordinates.
+Parallel transport is the correct geometric notion of moving a vector from one tangent space to another without introducing artificial rotation or distortion from our choice of coordinates. In particular, it simply stipulates that the (covariant) derivative of the tangent vector in the direction of the curve is zero: the tangent vector is unchanging!
 
-Using the projection formula above, parallelity can equivalently be characterized, under suitable regularity, by
+Using the projection formula above, parallelism can equivalently be characterized, under suitable regularity, by
 
 $$
 \nabla\cdot\left[
@@ -289,7 +287,7 @@ $$
 =0.
 $$
 
-This characterization is mathematically clean, but computationally unpleasant: exact parallel transport is described by a high-dimensional PDE. Solving this PDE every time we want to transfer a trend would make the method difficult to use.
+This characterization is mathematically precist, but computationally intractable. Exact parallel transport is described by a high-dimensional PDE. Solving this PDE every time we want to transfer a trend would make the method difficult to use.
 
 The main computational question is therefore: can we approximate Wasserstein parallel transport using only standard optimal transport operations?
 
@@ -303,9 +301,7 @@ $$
 
 be the Brenier map between them. Suppose also that $v\in T_\nu\mathcal{P}_2(\mathbb{R}^d)$ is the tangent vector that we want to transport.
 
-The approximation has a simple geometric interpretation.
-
-First, use the optimal transport map to match a point $x$ under $\nu$ with the point $T(x)$ under $\mu$. Because the ambient space is $\mathbb{R}^d$, ordinary Euclidean parallel transport does nothing to the vector itself. Thus, at matched points, define
+The approximation has a simple geometric interpretation. First, use the optimal transport map to match a point $x$ under $\nu$ with the point $T(x)$ under $\mu$. Because the ambient space is $\mathbb{R}^d$, ordinary Euclidean parallel transport does nothing to the vector itself. Thus, at matched points, define
 
 $$
 \widetilde v(T(x))=v(x).
@@ -356,8 +352,8 @@ $$
 $$
 
 and repeatedly apply the local transport step. A local error of order $N^{-2}$ accumulated across $N$ steps gives a global error of order $N^{-1}$, and the paper makes this argument precise under appropriate assumptions.
-
-In the general manifold setting, the paper packages this idea into a *fanning scheme*: base-manifold parallel transport can itself be approximated using Jacobi fields. For $M=\mathbb{R}^d$, that base-space parallel transport is just the identity, leaving the Brenier matching + tangent-space projection picture above. The important point for this post is that we can approximate Wasserstein parallel transport through tractable geometric primitives rather than directly solving the parallel-transport PDE.
+<!-- 
+In the general manifold setting, the paper packages this idea into a *fanning scheme*: base-manifold parallel transport can itself be approximated using Jacobi fields. For $M=\mathbb{R}^d$, that base-space parallel transport is just the identity, leaving the Brenier matching + tangent-space projection picture above. The important point for this post is that we can approximate Wasserstein parallel transport through tractable geometric primitives rather than directly solving the parallel-transport PDE. -->
 
 # Section 6: Wasserstein Parallel Trends
 
@@ -416,7 +412,7 @@ $$
 y_{i+1}^*-y_i^*=z_{i+1}-z_i.
 $$
 
-The dictionary is
+The map between the two is simply
 
 $$
 \begin{aligned}
@@ -426,7 +422,7 @@ $$
 \end{aligned}
 $$
 
-This is the conceptual core of the method. We are not trying to manufacture a vector-space structure on probability distributions. Instead, we use the geometry that Wasserstein space already has.
+This is the conceptual core of the method. Instead of trying to manufacture a vector-space structure on probability distributions, we use the intrinsic Riemannian geometry of the Wasserstein space.
 
 In practice we replace exact parallel transport with the approximation from the previous section,
 
@@ -452,7 +448,7 @@ $$
 \left(\operatorname{Id}+\widehat v_i^*\right)_\#\widehat\mu_i^*.
 $$
 
-So the final procedure is remarkably concrete: estimate an optimal transport map, extract a tangent velocity, parallel transport that velocity to the new baseline, and push the target distribution forward.
+So the final procedure is remarkably simple: estimate an optimal transport map, extract a tangent velocity, parallel transport that velocity to the new baseline, and push the target distribution forward.
 
 # Section 7: Recovering classical parallel trends
 
@@ -478,7 +474,7 @@ $$
 
 In other words, Wasserstein Parallel Trends implies ordinary parallel trends of the means.
 
-This property is important because it tells us that the geometric construction is genuinely an extension of the classical idea, rather than an unrelated notion that happens to share the same name. But it is strictly richer: the Wasserstein tangent vector describes how mass moves throughout the entire state space, so it can encode changes in scale, covariance, skewness, multimodality and other distributional features which are invisible to the mean.
+This property is important because it tells us that the Wasserstein parallel trends construction is genuinely an extension of the classical idea. But it should be noted that it is strictly richer: the Wasserstein tangent vector describes how mass moves throughout the entire state space, so it can encode changes in scale, covariance, skewness, multimodality and other distributional features which are invisible to the mean.
 
 # Section 8: Gaussian distributions make the geometry concrete
 
@@ -528,13 +524,11 @@ In our paper, parallel transport between Gaussian measures can be computed in cl
     Gaussian examples of Wasserstein parallel transport. The same reference dynamics can induce different deformations after being transported to a new distributional baseline.
 </div>
 
-The Gaussian case is special because everything can be written explicitly, but the geometric idea is not restricted to Gaussian measures. In the general setting, the tangent field can encode much more complicated redistributions of mass.
+<!-- The Gaussian case is special because everything can be written explicitly, but the geometric idea is not restricted to Gaussian measures. In the general setting, the tangent field can encode much more complicated redistributions of mass. -->
 
 # Section 9: Approximation guarantees
 
-There are two distinct approximation problems worth separating.
-
-The first is geometric: exact Wasserstein parallel transport is defined by the covariant derivative, while our computational method approximates it by many short optimal-transport-and-projection steps. If $N$ denotes the number of interpolation steps used to approximate each parallel transport operation, then under the regularity assumptions in the paper the accumulated counterfactual reconstruction error satisfies a bound of the form
+There are two distinct approximation problems worth separating. The first is one of a geometric nature. In particular, exact Wasserstein parallel transport is defined by the covariant derivative, while our computational method approximates it by many short optimal-transport-and-projection steps. If $N$ denotes the number of interpolation steps used to approximate each parallel transport operation, then under the regularity assumptions in the paper the accumulated counterfactual reconstruction error satisfies a bound of the form
 
 $$
 \sum_{i=1}^T
@@ -545,13 +539,12 @@ $$
 
 Thus, as the geodesic discretization is refined, the reconstructed dynamics converge to the trajectory generated by exact Wasserstein parallel transport.
 
-The second problem is statistical: in applications, the distributions themselves are usually unknown and replaced by empirical estimates. This introduces a separate source of error from estimating transport maps, tangent fields and projections from finite samples. I am deliberately separating that issue from the geometric approximation here, since the main point of this post is the structure of the method itself.
+The second approximation problem is statistical. In applications, the distributions themselves are usually unknown and replaced by empirical estimates. This introduces a separate source of error from estimating transport maps, tangent fields and projections from finite samples. I am deliberately separating that issue from the geometric approximation here, since the main point of this post is the structure of the method itself.
 
 # Section 10: The big picture
 
-The entire construction can be summarized by comparing one Euclidean equation with one Wasserstein equation.
-
-In a vector space, parallel dynamics are propagated by
+The entire construction can be summarized by generalizing a Euclidean equation with an operation on the Wasserstein space.
+In particular, in a vector space parallel dynamics are propagated by
 
 $$
 y_{t+1}^*
@@ -561,7 +554,7 @@ y_t^*
 \left(z_{t+1}-z_t\right).
 $$
 
-On Wasserstein space, the corresponding operation is
+On the Wasserstein space, the corresponding operation is
 
 $$
 \boxed{
@@ -579,6 +572,6 @@ $$
 
 The logarithmic map extracts a trend, parallel transport moves that trend between tangent spaces, and the exponential map applies it at the new baseline.
 
-What I like about this formulation is that ``parallel trends'' becomes literally geometric. Rather than defining parallelism through subtraction, we define it by transporting tangent dynamics without distortion along the geometry of the space of probability measures. Optimal transport provides the metric, the metric induces a Riemannian structure, and that structure gives us the notion of parallel transport needed to move dynamics from one distribution to another.
+<!-- What I like about this formulation is that ``parallel trends'' becomes literally geometric. Rather than defining parallelism through subtraction, we define it by transporting tangent dynamics without distortion along the geometry of the space of probability measures. Optimal transport provides the metric, the metric induces a Riemannian structure, and that structure gives us the notion of parallel transport needed to move dynamics from one distribution to another. -->
 
 For the technical details, proofs, Gaussian formulas and the full fanning construction, see the [paper](https://arxiv.org/abs/2603.23736).
