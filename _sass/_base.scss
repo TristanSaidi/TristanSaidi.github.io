@@ -725,10 +725,8 @@ footer.sticky-bottom {
     list-style: none;
     padding: 0 0 0 1.5rem;
     margin-top: 0;
-    counter-reset: publication-item;
 
     li {
-      counter-increment: publication-item;
       margin-bottom: 1rem;
 
       .preview {
@@ -928,16 +926,6 @@ footer.sticky-bottom {
       .compact-publication {
         position: relative;
         margin: 0;
-        padding-left: 3rem;
-
-        &::before {
-          position: absolute;
-          left: 0;
-          top: 0.15rem;
-          color: var(--global-text-color-light);
-          content: "[" counter(publication-item) "]";
-          font-size: 0.95rem;
-        }
 
         .compact-publication__content {
           max-width: 100%;
@@ -999,16 +987,6 @@ footer.sticky-bottom {
     }
     div.award.hidden.open {
       border-color: var(--global-highlight-color);
-    }
-  }
-
-  @media (max-width: 576px) {
-    ol.bibliography li .compact-publication {
-      padding-left: 2.4rem;
-
-      &::before {
-        font-size: 0.85rem;
-      }
     }
   }
 }

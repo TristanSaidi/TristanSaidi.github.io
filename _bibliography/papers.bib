@@ -4,15 +4,13 @@
 @string{aps = {American Physical Society,}}
 
 @article{saidi2026sinkhorn,
-  abstract={The Sinkhorn divergence, a debiased form of entropic optimal transport, has been widely used in various scientific disciplines due to its computational and statistical tractability. Unlike the quadratic Wasserstein distance, however, the Sinkhorn divergence is not a metric and it does not naturally admit a formal Riemannian structure. These properties are central to many applications of optimal transport methods that utilize interpolation, barycentric averaging, parallel transport or other geometric operations. Recent work by Lavenant et al. (2024) addresses these shortcomings by constructing a formal Riemannian tangent space and a metric tensor on the space of probability measures that quadratically approximates the Sinkhorn divergence. In this work, we extend this framework with two major threads of contributions. For a suitable class of finite-smoothness cost functions, we prove Hadamard differentiability of the Sinkhorn metric tensor and we utilize the technique of Gigli (2012) to derive the Levi-Civita covariant derivative in this geometry; we then use the covariant derivative to obtain the geodesic and parallel transport equations, each of which amount to a second order ODE on a fixed Reproducing Kernel Hilbert Space (RKHS) with smooth coefficients. Our second contribution is to linearize the solutions to the geodesic and parallel transport equations using standard tools from Banach space ODE theory. We show that these linearizations imply √n-limiting Gaussian processes centered at population values for the plugin estimators of the exponential map, the logarithmic map, parallel transport and the induced Sinkhorn distance. Moreover, we show that the nonparametric bootstrap is consistent for all objects mentioned. To the best of our knowledge, these are the first √n-limit theorems and bootstrap consistency results for canonical geometric operations in a transport-based geometry on the space of probability measures.},
   title={Second-order Sinkhorn Geometry and √n-Inference},
-  author={Tristan Luca Saidi and Gonzalo Mena and Florian Gunsilius},
+  author={Tristan Luca Saidi and Florian Gunsilius and Gonzalo Mena},
   journal={In preparation},
   year={2026},
 }
 
 @article{saidi2026singleindex,
-  abstract={In this work we propose and analyze a procedure for estimating a generalized single-index regression model. This generalized single-index regression framework models the conditional mean of the responses y as a function of the covariates x where the mapping is assumed to have the form f ∘ g, where g is β-Hölder with β ≥ 2 and f is a C² function. We propose a general procedure that operates under minimal assumptions about the distribution of covariates x, requiring only boundedness, sufficient smoothness and absolute continuity with respect to Lebesgue. Our procedure estimates the gradient vector v̂(x) ≈ ∇g(x), and then uses this to produce an estimate of the response function f via projected kernel regression. We derive central limit theorems for gradient vector estimates v̂ₓ and regression estimates f̂(x), and we derive rates of convergence for our approach, illustrating that it indeed achieves the minimax rate pointwise when β = 2. Finally, we instantiate this model in the situation where g = Π is a closest point projection onto a compact and regular embedded C³ curve γ, a setting recently studied in the literature. We also supplement our theoretical results with simulations to demonstrate the utility of our procedure.},
   title={Locally Linear Generalized Single Index Regression},
   author={Tristan Luca Saidi and Arun Kuchibhotla},
   journal={In preparation},
@@ -20,8 +18,6 @@
 }
 
 @misc{saidi2026wassersteinparalleltransportpredicting,
-      abstract_summary={This paper develops Wasserstein Parallel Trends for counterfactual prediction in systems described by evolving probability distributions. It replaces vector subtraction with parallel transport along optimal transport geodesics, introduces a fanning scheme with theoretical approximation guarantees, and derives closed-form results for Gaussian measures. Experiments on synthetic and single-cell RNA sequencing data illustrate how the method predicts distributional dynamics across systems.},
-      abstract_source={https://arxiv.org/abs/2603.23736},
       title={Wasserstein Parallel Transport for Predicting the Dynamics of Statistical Systems},
       author={Tristan Luca Saidi and Gonzalo Mena and Larry Wasserman and Florian Gunsilius},
       year={2026},
@@ -33,8 +29,6 @@
 }
 
 @misc{saidi2026differentialgeometricequivalencehellingerkantorovichconewasserstein,
-      abstract_summary={This work connects the local Riemannian geometry of Hellinger-Kantorovich space to Wasserstein geometry on a metric cone. A constructive lifting procedure preserves tangent-space geometry along suitable geodesics, enabling parallel transport computations through Wasserstein methods. The paper also derives cone covariant derivatives and parallel transport formulas and illustrates how spatial motion and changes in mass interact.},
-      abstract_source={https://arxiv.org/abs/2605.24329},
       title={On the Differential-Geometric Equivalence of Hellinger-Kantorovich and Cone-Wasserstein Spaces},
       author={Tristan Luca Saidi and Gonzalo Mena and Florian Gunsilius},
       year={2026},
@@ -46,8 +40,6 @@
 }
 
 @article{embedor,
-  abstract_summary={EmbedOR uses discrete graph curvature to improve stochastic neighbor embeddings of noisy, high-dimensional data. Its curvature-enhanced distances emphasize cluster structure and extend theoretical consistency guarantees for t-SNE. Synthetic and real-data experiments show reduced fragmentation of connected, high-density regions. The same distances can also annotate existing visualizations to reveal misleading separations.},
-  abstract_source={https://www.pnas.org/doi/10.1073/pnas.2509171123},
   title={Provable Cluster-Preserving Visualizations with Curvature-Based Stochastic Neighbor Embeddings},
   author={Tristan Luca Saidi and Abigail Hickok and Bastian Rieck and Andrew J. Blumberg},
   journal={PNAS},
@@ -59,8 +51,6 @@
 }
 
 @article{saidi2025recovering,
-  abstract_summary={ORC-ManL detects and removes shortcut edges in nearest-neighbor graphs using Ollivier-Ricci curvature and estimated metric distortion. The method exploits the more negative curvature of edges that cut across a noisy manifold rather than follow its geometry. Experiments demonstrate improvements in manifold learning, persistent homology, dimension estimation, and analysis of single-cell RNA sequencing data, with convergence experiments supporting the theory.},
-  abstract_source={https://proceedings.iclr.cc/paper_files/paper/2025/hash/38181d6ee614ee613d26df31281a6847-Abstract-Conference.html},
   title={Recovering Manifold Structure Using Ollivier Ricci Curvature},
   author={Tristan Luca Saidi and Abigail Hickok and Andrew J. Blumberg},
   journal={ICLR},
@@ -71,8 +61,6 @@
 }
 
 @article{guo2025ab,
-  abstract_summary={PXRDnet uses a diffusion-based generative model to infer nanocrystal structures from a chemical formula and a broadened powder diffraction pattern. By combining diffraction information with learned structural priors, the method produces candidate atomic structures even when finite-size effects obscure conventional diffraction signals. Evaluations cover diverse simulated materials and noisy experimental measurements, demonstrating a data-driven route to nanomaterial structure determination.},
-  abstract_source={https://www.nature.com/articles/s41563-025-02220-y},
   title={Ab initio structure solutions from nanocrystalline powder diffraction data via diffusion models},
   author={Guo, Gabe and Saidi, Tristan Luca and Terban, Maxwell W and Valsecchi, Michele and Billinge, Simon JL and Lipson, Hod},
   journal={Nature Materials},
@@ -85,8 +73,6 @@
 }
 
 @article{khandate2024r,
-  abstract_summary={This method combines sampling-based planning with model-free reinforcement learning to acquire complex dexterous manipulation skills. Rapidly-exploring random trees explore useful regions of the high-dimensional state space, supplying reset distributions and imitation pre-training to bootstrap policy learning. The resulting policies manipulate complex objects while maintaining a secure grasp without passive support surfaces and transfer to real robots.},
-  abstract_source={https://link.springer.com/article/10.1007/s10514-024-10170-8},
   title={RxR: Rapid exploration for reinforcement learning via sampling-based reset distributions and imitation pre-training},
   author={Khandate, Gagan and Saidi, Tristan L and Shang, Siqi and Chang, Eric T and Liu, Yang and Dennis, Seth and Adams, Johnson and Ciocarlie, Matei},
   journal={Autonomous Robots},
@@ -100,8 +86,6 @@
 }
 
 @article{khandate2023sampling,
-  abstract_summary={This paper uses sampling-based exploration to make reinforcement learning of dexterous manipulation more effective. Two rapidly-exploring random tree variants explore feasible states, using either environment transitions or manipulation-specific kinematic constraints. Those states define reset distributions for model-free policy training under dynamic constraints. The learned policies handle challenging in-hand manipulation without passive support and transfer to physical robots.},
-  abstract_source={https://arxiv.org/abs/2303.03486},
   title={Sampling-based exploration for reinforcement learning of dexterous manipulation},
   author={Khandate, Gagan and Shang, Siqi and Chang, Eric T and Saidi, Tristan Luca and Liu, Yang and Dennis, Seth Matthew and Adams, Johnson and Ciocarlie, Matei},
   journal={arXiv preprint arXiv:2303.03486},

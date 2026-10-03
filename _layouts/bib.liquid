@@ -1,5 +1,6 @@
 ---
 ---
+{% assign publication_abstract = site.data.publication_abstracts[entry.key].text | default: entry.abstract %}
 {% assign is_home_page = false %}
 {% if page.url == '/' %}
   {% assign is_home_page = true %}
@@ -137,8 +138,8 @@
 {% endif %}
 
 <div
-  class="row{% if use_compact_publication_layout %} compact-publication{% endif %}{% if entry.abstract or entry.abstract_summary %} has-publication-abstract{% endif %}"
-  {% if entry.abstract or entry.abstract_summary %}
+  class="row{% if use_compact_publication_layout %} compact-publication{% endif %}{% if publication_abstract %} has-publication-abstract{% endif %}"
+  {% if publication_abstract %}
     tabindex="0"
     aria-label="Publication: {{ entry.title | escape }}"
   {% endif %}
@@ -491,16 +492,13 @@
       </div>
     {% endif %}
 
-    {% if entry.abstract or entry.abstract_summary %}
+    {% if publication_abstract %}
       <div class="publication-abstract">
         <div class="publication-abstract__clip">
           <div class="publication-abstract__body">
             <p>
-              {% if entry.abstract %}{{ entry.abstract }}{% else %}{{ entry.abstract_summary }}{% endif %}
+              {{ publication_abstract | escape }}
             </p>
-            {% if entry.abstract == blank and entry.abstract_source %}
-              <a href="{{ entry.abstract_source }}">Read the full abstract</a>
-            {% endif %}
           </div>
         </div>
       </div>

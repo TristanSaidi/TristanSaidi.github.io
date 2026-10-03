@@ -13,7 +13,7 @@ window.MathJax = {
         function (doc) {
           const style = document.createElement("style");
           style.innerHTML = `
-          .mjx-container {
+          mjx-container {
             color: inherit;
           }
         `;
