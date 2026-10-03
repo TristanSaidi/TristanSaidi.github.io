@@ -83,7 +83,7 @@ $$
 
 The first ingredient is a notion of distance between probability measures. Optimal transport builds this distance by asking how cheaply one distribution can be rearranged into another.
 
-**Definition.** A measurable map $T:\mathbb{R}^d\rightarrow\mathbb{R}^d$ pushes $\mu$ forward to $\nu$, written $T_\#\mu=\nu$, if
+**Definition.** A measurable map $T:\mathbb{R}^d\rightarrow\mathbb{R}^d$ pushes $\mu$ forward to $\nu$, written $T_\\#\mu=\nu$, if
 
 $$
 \nu(B)=\mu(T^{-1}(B))
